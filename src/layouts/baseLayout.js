@@ -91,17 +91,21 @@ class Layout extends React.Component {
                         <Link to="/pet">
                           <img className="mb-4 w-24 mw-24 sm:w-16 sm:mr-16" alt="Logo" src={logo} />
                         </Link>
-                        <div className="flex flex-wrap">
+
+                        <div className="flex flex-wrap md:w-1/1">
                            <p> Welcome to PetBoo! Enjoy our best service</p>
-                        {/*  {*/}
-                        {/*    links.map((l, i) => (*/}
-                        {/*      <Link to={`/${l.link}`} key={i}>*/}
-                        {/*        <p key={i}*/}
-                        {/*           className="text-left m-0 text-smaller mr-4 sm:mr-8 font-semibold">{l.name}</p>*/}
-                        {/*      </Link>*/}
-                        {/*    ))*/}
-                        {/*  }*/}
+                          {/*{*/}
+                          {/*  links.map((l, i) => (*/}
+                          {/*    <Link to={`/${l.link}`} key={i}>*/}
+                          {/*      <p key={i}*/}
+                          {/*         className="text-left m-0 text-smaller mr-4 sm:mr-8 font-semibold">{l.name}</p>*/}
+                          {/*    </Link>*/}
+                          {/*  ))*/}
+                          {/*}*/}
                         </div>
+                        {/*<Link to="/pet">*/}
+                        {/*  <a href="/pet"><strong>Home</strong></a>*/}
+                        {/*</Link>*/}
                         <div style={{ width: "300px", marginLeft: "400px", fontSize:"15px" }}>
                           <Select
                             value={selectedOption}

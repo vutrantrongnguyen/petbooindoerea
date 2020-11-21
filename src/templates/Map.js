@@ -4,7 +4,7 @@ import {
   withGoogleMap,
   withScriptjs,
   GoogleMap,
-  DirectionsRenderer,DistanceMatrixService
+  DirectionsRenderer
 } from "react-google-maps"
 
 class Map extends Component {

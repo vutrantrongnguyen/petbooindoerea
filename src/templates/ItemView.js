@@ -14,7 +14,7 @@ import Map from './Map';
   const [numberOfitems, updateNumberOfItems] = useState(1)
   const [position, setPosition] = useState(undefined);
   const item = props.pageContext.content
-  const { price, image, name, description, phone, shoplocation, lat, lng } = item
+  const { price, image, name, description, phone, shoplocation, lat, lng, count } = item
   const { context: { addToCart }} = props
 
 
