@@ -41,8 +41,19 @@ import Map from './Map';
 
   return (
     <>
-      <CartLink />
+      
       <div className="py-12 flex flex-1 flex-col
+      md:flex-row
+      w-full
+      my-0 mx-auto">
+        <div className="pt-2 px-0 md:px-10 pb-8 w-full md:w-1/1">
+          <h2 className="text-5xl font-light">{name}</h2>
+          <p className="text-gray-600 text-sm"><strong>Địa chỉ: </strong>{shoplocation}</p>
+          <p className="text-gray-600 text-sm"><strong>SDT: </strong>{phone}</p>
+          {/* <p>Distance: {position && Math.sqrt((parseFloat(lat) - position.coords.latitude )*(parseFloat(lat) - position.coords.latitude ) - (parseFloat(lng) - position.coords.longitude )*(parseFloat(lng) - position.coords.longitude ))}</p>
+          <h2 className="text-2xl tracking-tighter">Distance: {price} km</h2> */}
+          
+          <div className="py-12 flex flex-1 flex-col
       md:flex-row
       w-full
       my-0 mx-auto">
@@ -54,14 +65,10 @@ import Map from './Map';
           </div>
         </div>
       </div>
-      <div className="py-12 flex flex-1 flex-col
-      md:flex-row
-      w-full
-      my-0 mx-auto">
-        <div className="pt-2 px-0 md:px-10 pb-8 w-full md:w-1/1">
-          <h2 className="text-5xl font-light">{name}</h2>
-          {/*<p>Distance: {position && Math.sqrt((parseFloat(lat) - position.coords.latitude )*(parseFloat(lat) - position.coords.latitude ) - (parseFloat(lng) - position.coords.longitude )*(parseFloat(lng) - position.coords.longitude ))}</p>*/}
-          <h2 className="text-2xl tracking-tighter">Distance: {price} km</h2>
+          <p className="text-gray-600 text-sm">{description}</p>
+          <p className="text-gray-600 text-sm"><strong>Dịch vụ đi kèm: </strong>{description}</p>
+          <p className="text-gray-600 text-sm"><strong>Số lần đã đặt: </strong>{count}</p>
+
           <div>
             {position && <MapLoader
               lat1={parseFloat(lat)}
@@ -71,13 +78,7 @@ import Map from './Map';
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHARpF3EFSAmJCPtdNAVYfMoLOeico1yc"
               loadingElement={<div/>}
             />}
-
           </div>
-          <p className="text-gray-600 text-sm"><strong>Địa chỉ: </strong>{shoplocation}</p>
-          <p className="text-gray-600 text-sm"><strong>SDT: </strong>{phone}</p>
-          <p className="text-gray-600 text-sm">{description}</p>
-          <p className="text-gray-600 text-sm"><strong>Dịch vụ đi kèm: </strong>{description}</p>
-          <p className="text-gray-600 text-sm"><strong>Số lần đã đặt: </strong>{count}</p>
           {/*<div className="mb-6">*/}
           {/*  <QuantityPicker*/}
           {/*    increment={increment}*/}
@@ -85,11 +86,6 @@ import Map from './Map';
           {/*    numberOfitems={numberOfitems}*/}
           {/*  />*/}
           {/*</div>*/}
-          <Button
-            full
-            title="Choose this one"
-            onClick={() => addItemToCart(item)}
-          />
         </div>
       </div>
     </>
