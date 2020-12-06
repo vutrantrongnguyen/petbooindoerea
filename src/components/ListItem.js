@@ -5,7 +5,7 @@ import Image from './Image'
 
 const ListItem = ({ link, title, imageSrc, price }) =>  (
   <div className="
-    w-full
+    w-100
     md:w-1/2
     lg:w-1/2
     p1 sm:p-2
