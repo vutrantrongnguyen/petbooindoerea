@@ -14,11 +14,10 @@ const CategoryView = (props) => {
   const { pageContext: { title, content: { items = [] }}} = props
   return (
     <>
-      <CartLink />
       <div className="flex flex-col items-center">
         <div className="max-w-fw flex flex-col">
           <div className="pt-10 pb-8">
-            <h1 className="text-5xl font-light">{titleIfy(title)}</h1>
+            <h1 className="text-5xl font-light">Pet House List</h1>
           </div>
 
           <div>
