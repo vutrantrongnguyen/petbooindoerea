@@ -1,6 +1,6 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import { toast } from "react-toastify"
+import { StaticQuery, graphql } from 'gatsby'
+import { toast } from 'react-toastify';
 
 const mainQuery = graphql`
   query {
@@ -10,12 +10,12 @@ const mainQuery = graphql`
   }
 `
 
-const STORAGE_KEY = "GATSBY_ECOMMERCE_STARTER_"
+const STORAGE_KEY = 'GATSBY_ECOMMERCE_STARTER_'
 
 const initialState = {
   cart: [],
   numberOfItemsInCart: 0,
-  total: 0,
+  total: 0
 }
 
 const SiteContext = React.createContext()
@@ -31,7 +31,7 @@ function calculateTotal(cart) {
 
 class ContextProviderComponent extends React.Component {
   componentDidMount() {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       const storageState = window.localStorage.getItem(STORAGE_KEY)
       if (!storageState) {
         window.localStorage.setItem(STORAGE_KEY, JSON.stringify(initialState))
@@ -45,7 +45,7 @@ class ContextProviderComponent extends React.Component {
     const index = cart.findIndex(cartItem => cartItem.id === item.id)
     cart[index].quantity = item.quantity
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      cart, numberOfItemsInCart: cart.length, total: calculateTotal(cart),
+      cart, numberOfItemsInCart: cart.length, total: calculateTotal(cart)
     }))
     this.forceUpdate()
   }
@@ -68,10 +68,10 @@ class ContextProviderComponent extends React.Component {
     }
 
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      cart, numberOfItemsInCart: cart.length, total: calculateTotal(cart),
+      cart, numberOfItemsInCart: cart.length, total: calculateTotal(cart)
     }))
     toast("Successfully added item to cart!", {
-      position: toast.POSITION.TOP_LEFT,
+      position: toast.POSITION.TOP_LEFT
     })
     this.forceUpdate()
   }
@@ -82,7 +82,7 @@ class ContextProviderComponent extends React.Component {
     cart = cart.filter(c => c.id !== item.id)
 
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      cart, numberOfItemsInCart: cart.length, total: calculateTotal(cart),
+      cart, numberOfItemsInCart: cart.length, total: calculateTotal(cart)
     }))
     this.forceUpdate()
   }
@@ -94,7 +94,7 @@ class ContextProviderComponent extends React.Component {
 
   render() {
     let state = initialState
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       const storageState = window.localStorage.getItem(STORAGE_KEY)
       if (storageState) {
         state = JSON.parse(storageState)
@@ -103,7 +103,7 @@ class ContextProviderComponent extends React.Component {
 
     return (
       <StaticQuery query={mainQuery}>
-        {queryData => {
+        { queryData => {
           return (
             <SiteContext.Provider value={{
               ...state,
@@ -111,7 +111,7 @@ class ContextProviderComponent extends React.Component {
               addToCart: this.addToCart,
               clearCart: this.clearCart,
               removeFromCart: this.removeFromCart,
-              setItemQuantity: this.setItemQuantity,
+              setItemQuantity: this.setItemQuantity
             }}>
               {this.props.children}
             </SiteContext.Provider>
@@ -124,5 +124,5 @@ class ContextProviderComponent extends React.Component {
 
 export {
   SiteContext,
-  ContextProviderComponent,
+  ContextProviderComponent
 }

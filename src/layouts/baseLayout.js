@@ -6,9 +6,11 @@
  */
 
 import React from "react"
-import {withRouter, BrowserRouter as Router,
+import {
+  withRouter, BrowserRouter as Router,
   Switch,
-  Route} from "react-router-dom"
+  Route,
+} from "react-router-dom"
 import Select from "react-select"
 import { Link } from "gatsby"
 import { SiteContext, ContextProviderComponent } from "../context/mainContext"
@@ -16,6 +18,8 @@ import { titleIfy, slugify } from "../../utils/helpers"
 import "react-toastify/dist/ReactToastify.css"
 import { toast } from "react-toastify"
 import { colors } from "../theme"
+import Button from "../components/Button"
+import { Dropdown } from "react-bootstrap"
 
 toast.configure({
   progressStyle: {
@@ -35,7 +39,7 @@ const options1 = [
   { value: "petmart", label: "PETMART" },
   { value: "petlovers", label: "PET LOVERS" },
   // { value: "hai-ba-trung", label: "Hai Bà Trưng - location" },
-  ]
+]
 const options2 = [
   { value: "dong-da", label: "Đống Đa" },
   { value: "tu-liem", label: "Từ Liêm" },
@@ -43,22 +47,64 @@ const options2 = [
   { value: "hung-vuong", label: "Hùng Vương" },
 ]
 
-class Layout extends React.Component {
+const navigation = [
+  "Keep the pet", "Pet trimming", "Medical examination",
+]
 
+class Layout extends React.Component {
+  state = { formState: 'signUp', isAdmin: false }
+  toggleFormState = (formState) => {
+    this.setState(() => ({ formState }))
+  }
+  async componentDidMount() {
+    // check and update signed in state
+  }
+  signUp = async (form) => {
+    const { username, email, password } = form
+    // sign up
+    this.setState({ formState: 'confirmSignUp' })
+    localStorage.setItem("formState", "confirmSignUp")
+  }
+  confirmSignUp = async (form) => {
+    const { username, authcode } = form
+    // confirm sign up
+    this.setState({ formState: 'signIn' })
+    localStorage.setItem("formState","signIn")
+  }
+  signIn = async (form) => {
+    const { username, password } = form
+    // signIn
+    this.setState({ formState: 'signedIn', isAdmin: true })
+    localStorage.setItem("isAdmin","true");
+    localStorage.setItem("formState", "signedIn")
+  }
+  signOut = async() => {
+    // sign out
+    this.setState({ formState: 'signUp' })
+    localStorage.setItem("formState", "signUp");
+  }
   state = {
+
     selectedOption: null,
     selectedLocation: null,
   }
 
   handleChange = selectedOption => {
     this.setState({ selectedOption })
-    window.location.href="/"+ (selectedOption.value);
+    window.location.href = "/" + (selectedOption.value)
   }
 
   handleChangeLocation = selectedLocation => {
-    this.setState({selectedLocation})
-    window.location.href="/"+ (selectedLocation.value);
+    this.setState({ selectedLocation })
+    window.location.href = "/" + (selectedLocation.value)
   }
+
+  handleChangeStatus() {
+    localStorage.setItem("isAdmin", "false")
+    window.location.href = "/signin"
+    this.forceUpdate();
+  }
+
   render() {
     const { children } = this.props
     const { selectedOption } = this.state
@@ -69,63 +115,80 @@ class Layout extends React.Component {
           {
             context => {
               let { navItems: { navInfo: { data: links } } } = context
-
-              links = links.map(link => ({
+              console.log("check duong link nao cac con vo", links)
+              links = navigation.map(link => ({
                 name: titleIfy(link),
                 link: slugify(link),
               }))
-              links.unshift({
-                name: "Home",
-                link: "/pet",
-              })
+              // links.unshift({
+              //   name: "Home",
+              //   link: "/pet",
+              // })
 
               return (
                 <div className="min-h-screen">
                   <nav>
-                    <div className="flex justify-center mx-auto">
-                    <span>
+                    <div className="flex justify-center mx-auto" style={{margin:'20px'}}>
+                      {/*<div>*/}
                         <Link to="/pet">
-                          <img className="mb-4 w-24 mw-24 sm:w-16 sm:mr-16" alt="Logo" src={logo} style={{marginRight: '10px', display: 'inline-block'}}/>
+                          <img alt="Logo" src={logo}
+                               style={{ margin: "auto", width: "100px" }} />
                         </Link>
-                        <div className="flex flex-wrap md:w-1/1">
-                           
-                          {/*{*/}
-                          {/*  links.map((l, i) => (*/}
-                          {/*    <Link to={`/${l.link}`} key={i}>*/}
-                          {/*      <p key={i}*/}
-                          {/*         className="text-left m-0 text-smaller mr-4 sm:mr-8 font-semibold">{l.name}</p>*/}
-                          {/*    </Link>*/}
-                          {/*  ))*/}
-                          {/*}*/}
+                        <div>
+                          <h2 className="text-center">Welcome to PetBoo!</h2>
+                          <h3 className="text-center">We take care of your pet in short time</h3>
                         </div>
-                        </span>
-                        {/*<Link to="/pet">*/}
-                        {/*  <a href="/pet"><strong>Home</strong></a>*/}
-                        {/*</Link>*/}
-                      </div>
+                      {/*</div>*/}
+
+                    </div>
                   </nav>
-                  <h2 className="text-center">Welcome to PetBoo!</h2>
-                    <h3 className="text-center">We take care of your pet in short time</h3>
+                  <div>
+                    {/*{window.location.href === "/signin" ?*/}
+                    {/*  (*/}
+                    {/*    <div className="fixed top-49 right-20 desktop:right-flexiblemargin z-10">*/}
+                    {/*      <Dropdown>*/}
+                    {/*        <Dropdown.Toggle variant="success" id="dropdown-basic">*/}
+                    {/*          Nguyen*/}
+                    {/*        </Dropdown.Toggle>*/}
+                    {/*        <Dropdown.Menu>*/}
+                    {/*          <Dropdown.Item href="/profile">*/}
+                    {/*            <button*/}
+                    {/*              className="bg-secondary hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"*/}
+                    {/*              type="button" style={{ margin: "2px" }}>Profile*/}
+                    {/*            </button>*/}
+                    {/*          </Dropdown.Item>*/}
+                    {/*          <Dropdown.Item href="#/action-2"> </Dropdown.Item>*/}
+                    {/*          <Dropdown.Item href="#/action-3">*/}
+                    {/*            <button*/}
+                    {/*              className="bg-secondary hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"*/}
+                    {/*              type="button" style={{ margin: "2px" }}>Medical history*/}
+                    {/*            </button>*/}
+                    {/*          </Dropdown.Item>*/}
+                    {/*          <Dropdown.Item href="#/action-4"> </Dropdown.Item>*/}
+                    {/*          <Dropdown.Item href="#/action-5">*/}
+                    {/*            <button onClick={() => this.handleChangeStatus()}*/}
+                    {/*                    className="bg-secondary hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"*/}
+                    {/*                    type="button" style={{ margin: "2px" }}>Logout*/}
+                    {/*            </button>*/}
+                    {/*          </Dropdown.Item>*/}
+                    {/*        </Dropdown.Menu>*/}
+                    {/*      </Dropdown>*/}
+                    {/*    </div>*/}
+
+                    {/*  ) : (*/}
+                    {/*    <div className="fixed top-49 right-20 desktop:right-flexiblemargin z-10">*/}
+                    {/*      <Button*/}
+                    {/*        full*/}
+                    {/*        title="Login"*/}
+                    {/*        onClick={() => (window.location.href = "/signin")}*/}
+                    {/*      />*/}
+                    {/*    </div>*/}
 
 
-                  <div className="mx-auto" style={{ width: "400px", fontSize:"15px" }}>
-                          <Select
-                            value={selectedOption}
-                            onChange={this.handleChange}
-                            options={options1}
-                            isSearchable={true}
-                            placeholder={"Find pet house"}
-                          />
-                        {/*</div>*/}
-                        {/*<div style={{ width: "300px", marginLeft: "20px" }}>*/}
-                          <Select
-                            value={selectedLocation}
-                            onChange={this.handleChangeLocation}
-                            options={options2}
-                            placeholder={"Filter by district..."}
-                            // isSearchable={true}
-                          />
-                        </div>
+                    {/*  )*/}
+                    {/*}*/}
+
+                  </div>
                   <div className="mobile:px-10 px-4 pb-10 flex justify-center">
                     <main className="w-fw">{children}</main>
                   </div>

@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
 import CartLink from '../components/CartLink'
 import { titleIfy, slugify } from '../../utils/helpers'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { graphql } from 'gatsby'
 
 const Home = ({ data: gqlData }) => {

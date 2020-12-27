@@ -3,9 +3,20 @@ import { SiteContext } from '../context/mainContext'
 import { FaShoppingCart, FaCircle } from 'react-icons/fa';
 import { Link } from "gatsby"
 import { colors } from '../theme'
+import Button from "./Button"
 const { secondary } = colors
 
 class CartLink extends React.Component {
+
+
+  state = {
+    selected: null,
+  }
+
+  handleChange() {
+    window.location.href="/signin";
+  }
+
   render() {
     let { context: { numberOfItemsInCart } = { numberOfItemsInCart: 0 } } = this.props
     return (
@@ -23,6 +34,11 @@ class CartLink extends React.Component {
               )
             }
           </div>
+          {/*<Button*/}
+          {/*  full*/}
+          {/*  title="Login"*/}
+          {/*  onClick={() => this.handleChange()}*/}
+          {/*/>*/}
         </div>
       </div>
     )

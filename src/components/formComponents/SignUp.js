@@ -2,7 +2,7 @@ import React from 'react'
 
 class SignUp extends React.Component {
   state = {
-    username: '', email: '', password: ''
+    username: '', email: '', password: '', phone: ''
   }
   onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value})
@@ -14,14 +14,7 @@ class SignUp extends React.Component {
         <div className="flex flex-1 justify-center">
           <div className="w-full max-w-144">
             <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-              <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-                  Username
-                </label>
-                <input
-                  onChange={this.onChange} name="username"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
-              </div>
+
               <div className="mb-6">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                   Email
@@ -38,12 +31,38 @@ class SignUp extends React.Component {
                   onChange={this.onChange} name="password"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="mb-6">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                  Re-enter Password
+                </label>
+                <input
+                  onChange={this.onChange} name="password"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                  Username
+                </label>
+                <input
+                  onChange={this.onChange} name="username"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+                  Phone Number
+                </label>
+                <input
+                  onChange={this.onChange} name="phone"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="text" placeholder="Phone number" />
+              </div>
+              <div className="flex items-center justify-between"  style={{justifyContent: "center",  alignItems: "center"}}>
                 <button onClick={() => this.props.signUp(this.state)} className="bg-secondary hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                   Sign Up
                 </button>
-                <a className="inline-block align-baseline font-bold text-sm" href="#" onClick={() => this.props.toggleFormState('signIn')}>
-                  Already signed up?
+              </div>
+              <div className="flex items-center justify-between" style={{justifyContent: "center",  alignItems: "center"}}>
+              <a className="inline-block align-baseline font-bold text-sm" href="#" onClick={() => this.props.toggleFormState('signIn')}>
+                  Login?
                 </a>
               </div>
             </form>

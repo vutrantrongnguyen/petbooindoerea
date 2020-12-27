@@ -3,7 +3,7 @@ import uuid from "uuid/v4"
 let inventory = [
 
   {
-    categories: ["pet", "dong da"],
+    categories: ["pet", "dong da", "keep the pet"],
     name: "KIMI",
     price: "2.2",
     image: "https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/126902507_2828512614093227_2165450947260808717_o.jpg?_nc_cat=108&ccb=2&_nc_sid=730e14&_nc_ohc=aEzukGLcF_EAX9gJE8_&_nc_ht=scontent.fhan2-3.fna&oh=42907be677ee97ce60e7ce57e668f32e&oe=5FE20DF6",
@@ -17,7 +17,7 @@ let inventory = [
     count:"3",
   },
   {
-    categories: ["pet", "dong da"],
+    categories: ["pet", "dong da", "keep the pet"],
     name: "LOLIPET",
     price: "5.4",
     image: "https://scontent.fhan2-5.fna.fbcdn.net/v/t1.0-9/126820553_2828512690759886_7309030570884542238_n.jpg?_nc_cat=109&ccb=2&_nc_sid=730e14&_nc_ohc=Dd37zQfBXmwAX_0lZav&_nc_ht=scontent.fhan2-5.fna&oh=c60496a142a3877528c5504fd474a84d&oe=5FE3A875",
@@ -32,7 +32,7 @@ let inventory = [
     count:"1",
   },
   {
-    categories: ["pet", "hung vuong"],
+    categories: ["pet", "hung vuong", "keep the pet"],
     name: "NETPET",
     price: "5.8",
     image: "https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/125975114_2828512670759888_3817999116771102654_n.jpg?_nc_cat=108&ccb=2&_nc_sid=730e14&_nc_ohc=d3ENRvIBg6sAX_u1_7s&_nc_ht=scontent.fhan2-3.fna&oh=ebda26f55694c048ed6b9e2b254a529f&oe=5FE12554",
@@ -47,7 +47,7 @@ let inventory = [
     count:"1",
   },
   {
-    categories: ["pet", "hung vuong"],
+    categories: ["pet", "hung vuong", "pet trimming"],
     name: "PETBOARDING",
     price: "5.8",
     image: "https://scontent.fhan2-5.fna.fbcdn.net/v/t1.0-9/127237446_2828512674093221_3436444217408717536_o.jpg?_nc_cat=109&ccb=2&_nc_sid=730e14&_nc_ohc=7El68PKGtIkAX-ULJWL&_nc_ht=scontent.fhan2-5.fna&oh=d75e45b0a1b6deee44d23a8d6fca7823&oe=5FE31C27",
@@ -61,7 +61,7 @@ let inventory = [
     count:"0",
   },
   {
-    categories: ["pet", "tay ho"],
+    categories: ["pet", "tay ho", "pet trimming"],
     name: "PETMART",
     price: "6.6",
     image: "https://scontent.fhan2-6.fna.fbcdn.net/v/t1.0-9/127218433_2828512587426563_4374186798126651658_n.jpg?_nc_cat=103&ccb=2&_nc_sid=730e14&_nc_ohc=QCfpQS8rBKgAX-QTFe4&_nc_ht=scontent.fhan2-6.fna&oh=f24e45784e6d4a518729a228ed7ed3be&oe=5FE1212D",
@@ -75,7 +75,7 @@ let inventory = [
     count:"4",
   },
   {
-    categories: ["pet", "tay ho"],
+    categories: ["pet", "tay ho", "medical examination"],
     name: "GAIA",
     price: "7.4",
     image: "https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/125837531_2828512630759892_2556439783418599596_o.jpg?_nc_cat=108&ccb=2&_nc_sid=730e14&_nc_ohc=PZzJszoOCbcAX80d2mY&_nc_ht=scontent.fhan2-3.fna&oh=2caa6793d3f991362cc3726a8ba4eb8b&oe=5FE23E89",
@@ -94,7 +94,7 @@ let inventory = [
 
   },
   {
-    categories: ["pet", "tu liem"],
+    categories: ["pet", "tu liem", "medical examination"],
     name: "PET LOVERS",
     price: "10.4",
     image: "https://scontent.fhan2-6.fna.fbcdn.net/v/t1.0-9/127220406_2828512574093231_2921362915718670111_n.jpg?_nc_cat=103&ccb=2&_nc_sid=730e14&_nc_ohc=WH2oqly6qdgAX8Qow7z&_nc_ht=scontent.fhan2-6.fna&oh=e778bbcb50f900f23fc8ddb3107bc71c&oe=5FE1D075",
@@ -108,7 +108,7 @@ let inventory = [
     count:"1",
   },
   {
-    categories: ["pet", "tu liem"],
+    categories: ["pet", "tu liem", "medical examination"],
     name: "J&P",
     price: "10.9",
     image: "https://scontent.fhan2-5.fna.fbcdn.net/v/t1.0-9/126338311_2828512577426564_1284514421381477126_n.jpg?_nc_cat=109&ccb=2&_nc_sid=730e14&_nc_ohc=Xn-_X4_a5AsAX9zx4tP&_nc_ht=scontent.fhan2-5.fna&oh=7f20dabd7e023ce04648cacb5c4f0845&oe=5FE24023",
