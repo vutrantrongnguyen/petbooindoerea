@@ -138,33 +138,41 @@ class Profile extends React.Component {
                         <Form.Row>
                           <Form.Group as={Col} controlId="formGridCity">
                             <Form.Label>Name</Form.Label>
-                            <Form.Control />
+                            <Form.Control placeholder={item.name}/>
                           </Form.Group>
 
                           <Form.Group as={Col} controlId="formGridState">
                             <Form.Label>Type</Form.Label>
-                            <Form.Control />
+                            <Form.Control placeholder={item.type}/>
                           </Form.Group>
 
                           <Form.Group as={Col} controlId="formGridZip">
                             <Form.Label>YoB</Form.Label>
                             <Form.Control as="select" defaultValue="Choose...">
                               <option>Choose...</option>
-                              <option>...</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
                             </Form.Control>
                           </Form.Group>
                         </Form.Row>
                         <Form.Row>
                           <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Weight</Form.Label>
-                            <Form.Control type="email" />
+                            <Form.Control type="email" placeholder={item.weight}/>
                           </Form.Group>
 
                           <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Sex</Form.Label>
                             <Form.Control as="select" defaultValue="Choose...">
                               <option>Choose...</option>
-                              <option>...</option>
+                              <option>male</option>
+                              <option>female</option>
                             </Form.Control>
                           </Form.Group>
 
