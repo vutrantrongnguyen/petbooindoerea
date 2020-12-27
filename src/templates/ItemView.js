@@ -5,7 +5,7 @@ import { SiteContext, ContextProviderComponent } from "../context/mainContext"
 import CartLink from "../components/CartLink"
 // import Button from "../components/Button"
 import Image from "../components/Image"
-import { Modal, Form, Button } from "react-bootstrap"
+import { Modal, Form, Button, Col, Row } from "react-bootstrap"
 import QuantityPicker from "../components/QuantityPicker"
 import { withScriptjs } from "react-google-maps"
 import Map from "./Map"
@@ -70,7 +70,7 @@ const ItemView = (props) => {
       w-full
       my-0 mx-auto">
         <div className="pt-2 px-0 md:px-10 pb-8 w-full md:w-1/1">
-          <div style={{ display: "flex",justifyContent:"space-between" }}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
             <h2 className="text-5xl font-light">{name}</h2>
             <Button variant="info" onClick={handleShow}>Make an appoinment</Button>
           </div>
@@ -167,16 +167,30 @@ const ItemView = (props) => {
                     <Form.Control type="email" placeholder="Địa chỉ cần đón" />
                   </Form.Group>
                 </Form>
-                <Button onClick={() => addItemToCart(item)} variant="info" style={{
-                  // backgroundColor: "#85cef9",
-                  width:"100%",
-                  margin: "auto",
-                  padding: "10px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}>Book
-                </Button>
+                <Row>
+                  <Button as={Col} onClick={() => addItemToCart(item)} variant="info" style={{
+                    // backgroundColor: "#85cef9",
+                    // width:"100%",
+                    // margin: "auto",
+                    // padding: "10px",
+                    // display: "flex",
+                    justifyContent: "left",
+                    // alignItems: "center",
+                  }}>Book (Free)
+                  </Button>
+                  <Col/>
+                  <Col/>
+                  <Button as={Col} onClick={() => addItemToCart(item)} variant="info" style={{
+                    // backgroundColor: "#85cef9",
+                    // width:"100%",
+                    // margin: "auto",
+                    // padding: "10px",
+                    // display: "flex",
+                    justifyContent: "right",
+                    // alignItems: "center",
+                  }}>Book (Premium)
+                  </Button>
+                </Row>
               </form>
 
             </div>
