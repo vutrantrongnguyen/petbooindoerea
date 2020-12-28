@@ -41,7 +41,15 @@ const Profile = () => {
   let initState =JSON.parse(window.localStorage.getItem("PROFILE"))
   console.log("state khoi tao", initState)
   const [state, setState] = useState(initState)
-  const onChange = (e) => {
+  const onChange = (e, index) => {
+    if( index!== undefined){
+      let pet = state.pet[index];
+      console.log(pet, index)
+      pet[e.target.name] = e.target.value;
+      setState({
+        ...state
+      })
+    }
     console.log({ [e.target.name]: e.target.value })
     state[e.target.name] = e.target.value
     console.log(state)
@@ -86,7 +94,7 @@ const Profile = () => {
     toast("Successfully update profile!", {
       position: toast.POSITION.TOP_LEFT,
     })
-    this.forceUpdate()
+    forceUpdate()
     window.location.href = "/profile"
   }
 
@@ -102,7 +110,7 @@ const Profile = () => {
     toast("Successfully update profile!", {
       position: toast.POSITION.TOP_LEFT,
     })
-    this.forceUpdate()
+    forceUpdate()
 
   }
 
@@ -178,7 +186,7 @@ const Profile = () => {
                         <Form.Row>
                           <Form.Group as={Col}>
                             <Form.Label>Name</Form.Label>
-                            <Form.Control placeholder={item.name} />
+                            <Form.Control placeholder={item.name} name="name" onChange={(e) =>onChange(e, index)}/>
                           </Form.Group>
 
                           <Form.Group as={Col}>
