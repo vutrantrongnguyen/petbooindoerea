@@ -14,14 +14,14 @@ let inventory = [
     lng: "105.831810",
     brand: "Jason Bourne",
     currentInventory: 8,
-    count:"3",
+    count: "3",
   },
   {
     categories: ["pet", "dong da", "keep the pet"],
     name: "LOLIPET",
     price: "5.4",
     image: "https://scontent.fhan2-5.fna.fbcdn.net/v/t1.0-9/126820553_2828512690759886_7309030570884542238_n.jpg?_nc_cat=109&ccb=2&_nc_sid=730e14&_nc_ohc=Dd37zQfBXmwAX_0lZav&_nc_ht=scontent.fhan2-5.fna&oh=c60496a142a3877528c5504fd474a84d&oe=5FE3A875",
-    description:"LoliPet Chuyên Bán các dòng thú cưng nhỏ : Hamster , Thỏ cảnh , Nhím cảnh , Sóc cảnh ...\n" +
+    description: "LoliPet Chuyên Bán các dòng thú cưng nhỏ : Hamster , Thỏ cảnh , Nhím cảnh , Sóc cảnh ...\n" +
       "Since 2011 - Shop Uy tín - Lâu Năm - Kinh Nghiệm",
     phone: "097.405.1990",
     shoplocation: "Số 10 Ngõ 45 Nguyên Hồng - Đồng Đa - Hà Nội",
@@ -29,14 +29,14 @@ let inventory = [
     lng: "105.812120",
     brand: "Pine",
     currentInventory: 10,
-    count:"1",
+    count: "1",
   },
   {
     categories: ["pet", "hung vuong", "keep the pet"],
     name: "NETPET",
     price: "5.8",
     image: "https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/125975114_2828512670759888_3817999116771102654_n.jpg?_nc_cat=108&ccb=2&_nc_sid=730e14&_nc_ohc=d3ENRvIBg6sAX_u1_7s&_nc_ht=scontent.fhan2-3.fna&oh=ebda26f55694c048ed6b9e2b254a529f&oe=5FE12554",
-    description:"369 HÙNG VƯƠNG BẠN SẼ THẤY THIÊN ĐƯỜNG DÀNH CHO THÚ CƯNG CỦA BẠN.\n" +
+    description: "369 HÙNG VƯƠNG BẠN SẼ THẤY THIÊN ĐƯỜNG DÀNH CHO THÚ CƯNG CỦA BẠN.\n" +
       "CHUYÊN CUNG CẤP THỨC ĂN--THỰC PHẨM BỔ SUNG--QUẦN ÁO--PHỤ KIỆN THÚ CƯNG SỈ VÀ LẺ HƠN 500 SẢN PHẨM KHÁC NHAU.",
     phone: "097 814 44 44",
     shoplocation: "369 Hùng Vương",
@@ -44,7 +44,7 @@ let inventory = [
     lng: "105.812120",
     brand: "Tony Tit",
     currentInventory: 7,
-    count:"1",
+    count: "1",
   },
   {
     categories: ["pet", "hung vuong", "pet trimming"],
@@ -58,7 +58,7 @@ let inventory = [
     lng: "105.812120",
     brand: "Hung Nguyen",
     currentInventory: 13,
-    count:"0",
+    count: "0",
   },
   {
     categories: ["pet", "tay ho", "pet trimming"],
@@ -72,7 +72,7 @@ let inventory = [
     lng: "105.840301",
     brand: "Preslyyyyy",
     currentInventory: 9,
-    count:"4",
+    count: "4",
   },
   {
     categories: ["pet", "tay ho", "medical examination"],
@@ -90,7 +90,7 @@ let inventory = [
     lng: "105.844210",
     brand: "Preslyyyyy",
     currentInventory: 4,
-    count:"0",
+    count: "0",
 
   },
   {
@@ -105,7 +105,7 @@ let inventory = [
     lng: "105.850000",
     brand: "Huyen Tran",
     currentInventory: 24,
-    count:"1",
+    count: "1",
   },
   {
     categories: ["pet", "tu liem", "medical examination"],
@@ -123,7 +123,7 @@ let inventory = [
     lng: "105.798220",
     brand: "Huyen Tran",
     currentInventory: 2,
-    count:"0",
+    count: "0",
 
   },
 ]
