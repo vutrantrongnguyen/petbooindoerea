@@ -18,8 +18,8 @@ import { titleIfy, slugify } from "../../utils/helpers"
 import "react-toastify/dist/ReactToastify.css"
 import { toast } from "react-toastify"
 import { colors } from "../theme"
-import Button from "../components/Button"
-import { Dropdown } from "react-bootstrap"
+// import Button from "../components/Button"
+import { Dropdown, Button } from "react-bootstrap"
 
 toast.configure({
   progressStyle: {
@@ -143,6 +143,7 @@ class Layout extends React.Component {
                     </div>
                   </nav>
                   <div>
+
                     {/*{window.location.href === "/signin" ?*/}
                     {/*  (*/}
                     {/*    <div className="fixed top-49 right-20 desktop:right-flexiblemargin z-10">*/}

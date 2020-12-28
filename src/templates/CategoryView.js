@@ -73,11 +73,11 @@ const CategoryView = (props) => {
   return (
     <>
       <div className="fixed top-49 right-20 desktop:right-flexiblemargin z-10">
-        <Dropdown>
+        {JSON.parse(window.localStorage.getItem("PROFILE")).isAdmin ? (<Dropdown>
           <Dropdown.Toggle variant="info" id="dropdown-basic">
             {/*<div style={{ display: "flex" }}>*/}
-              {/*<img src="/images/products/avatar2.png" width="30px" alt="" />*/}
-              Nguyen
+            {/*<img src="/images/products/avatar2.png" width="30px" alt="" />*/}
+            {JSON.parse(window.localStorage.getItem("PROFILE")).name}
             {/*</div>*/}
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -91,8 +91,9 @@ const CategoryView = (props) => {
               Logout
             </Dropdown.Item>
           </Dropdown.Menu>
-        </Dropdown>
+        </Dropdown>) : (<Button variant="info" onClick={()=> {window.location.href="/signin"}}>Login</Button>)}
       </div>
+
       <div>
         <div className="mx-auto" style={{ width: "400px", fontSize: "15px" }}>
           <Select
@@ -113,7 +114,7 @@ const CategoryView = (props) => {
             // isSearchable={true}
           />
         </div>
-        <div className="flex flex-wrap md:w-1/1" style={{marginTop:'10px'}}>
+        <div className="flex flex-wrap md:w-1/1" style={{ marginTop: "10px" }}>
           <Tabs
             id="controlled-tab-example"
             activeKey={key}

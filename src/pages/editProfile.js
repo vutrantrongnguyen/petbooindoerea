@@ -191,12 +191,12 @@ const Profile = () => {
 
                           <Form.Group as={Col}>
                             <Form.Label>Type</Form.Label>
-                            <Form.Control placeholder={item.type} />
+                            <Form.Control placeholder={item.type} name="type" onChange={(e) =>onChange(e, index)}/>
                           </Form.Group>
 
                           <Form.Group as={Col}>
                             <Form.Label>YoB</Form.Label>
-                            <Form.Control as="select" defaultValue="Choose...">
+                            <Form.Control as="select" defaultValue="Choose..." name="yob" onChange={(e) =>onChange(e, index)}>
                               <option>Choose...</option>
                               <option>1</option>
                               <option>2</option>
@@ -212,12 +212,12 @@ const Profile = () => {
                         <Form.Row>
                           <Form.Group as={Col}>
                             <Form.Label>Weight</Form.Label>
-                            <Form.Control type="email" placeholder={item.weight} />
+                            <Form.Control type="email" placeholder={item.weight} name="weight" onChange={(e) =>onChange(e, index)}/>
                           </Form.Group>
 
                           <Form.Group as={Col}>
                             <Form.Label>Sex</Form.Label>
-                            <Form.Control as="select" defaultValue="Choose...">
+                            <Form.Control as="select" defaultValue="Choose..." name="sex" onChange={(e) =>onChange(e, index)}>
                               <option>Choose...</option>
                               <option>male</option>
                               <option>female</option>
